@@ -7,10 +7,6 @@ import time
 HUBS = ['Python *', 'Процессоры', 'Usability *', 'Laravel *']
 # HUBS = ['дизайн', 'фото', 'web', 'python']
 url_main = 'https://habr.com'
-url_next = 'https://habr.com'
-no_article = True
-pattern = r'анали\w+'
-pattern_c = re.compile(pattern)
 
 
 def get_cur_page(soup_page):
@@ -31,6 +27,10 @@ def get_next_link(soup_page):
 
 
 if __name__ == '__main__':
+    no_article = True
+    pattern = r'анали\w+'
+    pattern_c = re.compile(pattern)
+    url_next = url_main
     n = 0
     while n < 7:
         response = requests.get(url=url_next, headers=HEADERS)
